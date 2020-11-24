@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1022620571612",
+    "firebase_url": "https://chatloveservice.firebaseio.com",
+    "project_id": "chatloveservice",
+    "storage_bucket": "chatloveservice.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022620571612:android:2c1838c1cc5111bf88e119",
+        "android_client_info": {
+          "package_name": "com.cj.chatlove_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1022620571612-rvk2j0hlhdpspive91gd7fqvg5f1n2o0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxkTu3n0tb3IG8wsLi-a5fEyQ2v0unt6E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1022620571612-rvk2j0hlhdpspive91gd7fqvg5f1n2o0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
