@@ -1,23 +1,19 @@
 package com.cj.chatlove_app.ui.main
 
 import android.annotation.SuppressLint
-import android.graphics.Color
-import android.graphics.PorterDuff
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.viewpager.widget.ViewPager
 import com.cj.chatlove_app.R
-import com.cj.chatlove_app.ui.fragment.chat.ChatFragment
-import com.cj.chatlove_app.ui.fragment.home.HomeFragment
+import com.cj.chatlove_app.eventbus.OnChangeViewPager
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 
 
 class MainActivity : AppCompatActivity() {
@@ -124,5 +120,25 @@ class MainActivity : AppCompatActivity() {
             3 -> mToolBar.setTitle("My Profile")
         }
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if (!EventBus.getDefault().isRegistered(this))
+            EventBus.getDefault().register(this);
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        EventBus.getDefault().unregister(this);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun OnChangeViewPager(onChangeViewPager: OnChangeViewPager) {
+//        Toast.makeText(
+//            applicationContext, onChangeViewPager.uid,
+//            Toast.LENGTH_SHORT
+//        ).show()
+        mViewPager.currentItem = 3
     }
 }

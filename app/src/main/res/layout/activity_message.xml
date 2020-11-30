@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.message.MessageActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/mToolBarDetail"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/mImgBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:src="@drawable/ic_arrow_back" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@id/mImgBack">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/mCircleIV"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_2sdp"
+                        android:paddingBottom="@dimen/_2sdp"
+                        android:src="@drawable/ic_brightness" />
+
+                    <TextView
+                        android:id="@+id/mTVNameDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/mCircleIV"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="Lá lành đùm lá rách"
+                        android:textSize="@dimen/_13sdp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/mTVNameDetail"
+                        android:layout_toEndOf="@id/mCircleIV"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/mIVOnline"
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_7sdp"
+                            android:src="@drawable/ic_brightness" />
+
+                        <TextView
+                            android:id="@+id/mTVOnline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/mTVNameDetail"
+                            android:layout_toEndOf="@id/mIVOnline"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:text="Đang hoạt động"
+                            android:textSize="@dimen/_9sdp" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mRecyclerViewDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/mRelativeLayoutDetail"
+            android:layout_below="@id/mToolBarDetail"
+            android:background="#F3F3F3" />
+
+        <RelativeLayout
+            android:id="@+id/mRelativeLayoutDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:elevation="@dimen/_10sdp"
+            android:padding="@dimen/_5sdp">
+
+            <ImageView
+                android:id="@+id/mImgDetail"
+                android:layout_width="@dimen/_27sdp"
+                android:layout_height="@dimen/_27sdp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_add_circle" />
+
+            <EditText
+                android:id="@+id/mEdtDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_toStartOf="@id/mBtnDetail"
+                android:layout_toEndOf="@id/mImgDetail"
+                android:background="@drawable/corner_edt"
+                android:maxLines="3"
+                android:padding="@dimen/_5sdp" />
+
+            <ImageView
+                android:id="@+id/mBtnDetail"
+                android:layout_width="@dimen/_27sdp"
+                android:layout_height="@dimen/_27sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ic_direction" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/mRltLImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/mIVBack"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="?actionBarSize"
+            android:layout_marginLeft="@dimen/_7sdp"
+            android:src="@drawable/ic_arrow_right" />
+
+        <ImageView
+            android:id="@+id/mIVMessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/mIVOther"
+            android:layout_below="@id/mIVBack"
+            android:src="@drawable/ic_launcher_background" />
+
+        <ImageView
+            android:id="@+id/mIVOther"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/_7sdp" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -3,6 +3,7 @@
     package="com.cj.chatlove_app">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,7 @@
         android:roundIcon="@drawable/ic_talk"
         android:supportsRtl="true"
         android:theme="@style/Theme.ChatLove_App">
-        <activity android:name=".ui.fragment.MainActivity"></activity>
+        <activity android:name=".ui.message.MessageActivity" />
         <activity android:name=".ui.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
