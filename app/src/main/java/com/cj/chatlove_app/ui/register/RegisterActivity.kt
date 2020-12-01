@@ -39,8 +39,9 @@ class RegisterActivity : AppCompatActivity() {
                         Log.d(TAG, "createUserWithEmail:success")
                         val user = auth.currentUser
                         val uid = user!!.uid
-                        val myRef = Firebase.database.getReference("users").child(uid)
+                        val myRef = Firebase.database.getReference("Users").child(uid)
                         var hashMap = HashMap<String, String>()
+                        hashMap.put("avatar", "default")
                         hashMap.put("uid", uid)
                         hashMap.put("displayName", "uid")
                         hashMap.put("email", user.email + "")

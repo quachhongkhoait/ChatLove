@@ -63,7 +63,7 @@ class ChatFragment : Fragment() {
     }
 
     private fun readChats() {
-        mReference = FirebaseDatabase.getInstance().getReference("users")
+        mReference = FirebaseDatabase.getInstance().getReference("Users")
         mReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 mListUser.clear()

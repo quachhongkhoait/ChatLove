@@ -24,10 +24,10 @@ class HomeAdapter(
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-//        var str = mList[position].displayName.toCharArray()[0].toString().toUpperCase()
-        holder.tvName.setText("T")
-//        holder.tvTitle.setText(mList[position].displayName)
-        holder.tvTitle.setText("T")
+        var str = mList[position].displayName.toCharArray()[0].toString().toUpperCase()
+        holder.tvName.setText(str)
+        holder.tvTitle.setText(mList[position].displayName)
+//        holder.tvTitle.setText("T")
         holder.tvPhoneNumber.setText(mList[position].email)
         holder.relativeLayout.setOnClickListener {
             mListener.onItem(position)

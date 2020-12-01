@@ -38,11 +38,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun getData() {
-        mListUser.clear()
         var firebaseUser = FirebaseAuth.getInstance().currentUser
-        var reference = FirebaseDatabase.getInstance().getReference("users")
+        var reference = FirebaseDatabase.getInstance().getReference("Users")
         reference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                mListUser.clear()
                 for (postSnapshot in snapshot.children) {
                     var user = postSnapshot.getValue(User::class.java)!!
                     if (!user.uid.equals(firebaseUser?.uid)) {
